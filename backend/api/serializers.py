@@ -8,7 +8,7 @@ class UserSerializers(serializers.ModelSerializer):
         model = User
         fields = ['id', 'username', 'password']
         # This line prevents the password from being shown as an API response
-        extra_kwargs = {'password': { 'write-only': True }}
+        # extra_kwargs = {'password': { 'write-only': True }}
 
     def create(self, validated_data):
         user = User.objects.create_user(**validated_data)

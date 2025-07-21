@@ -8,5 +8,5 @@ from .serializers import UserSerializers
 # class CreateUserView extends CreativeAPIView
 class CreateUserView(generics.CreateAPIView):
     queryset = User.objects.all()
-    serializer_class = User 
+    serializer_class = UserSerializers 
     permission_classes = [AllowAny]
