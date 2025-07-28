@@ -1,22 +1,39 @@
-from rest_framework import viewsets, status, filters
-from rest_framework.decorators import action
-from rest_framework.response import Response
-from django_filters.rest_framework import DjangoFilterBackend
-from django.utils import timezone
+from django.contrib.auth.models import User
 from django.db import models
+from django.utils import timezone
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters, generics, viewsets
+from rest_framework.decorators import action
+from rest_framework.permissions import IsAdminUser
+from rest_framework.response import Response
 
-from .models import Paciente, Medicamento, PrescricaoMedicamento, RegistroAdministracao
-from .serializers import (
-    PacienteSerializer, PacienteDetailSerializer, PacienteCreateSerializer,
-    MedicamentoSerializer, MedicamentoCreateSerializer,
-    PrescricaoMedicamentoSerializer, PrescricaoDetailSerializer, PrescricaoCreateSerializer,
-    RegistroAdministracaoSerializer
-)
+from .permissions import IsEnfermeiro
+
+from .models import (Medicamento, Paciente, PrescricaoMedicamento,
+                     RegistroAdministracao)
+from .serializers import (MedicamentoCreateSerializer, MedicamentoSerializer,
+                          PacienteCreateSerializer, PacienteDetailSerializer,
+                          PacienteSerializer, PrescricaoCreateSerializer,
+                          PrescricaoDetailSerializer,
+                          PrescricaoMedicamentoSerializer, RegisterSerializer,
+                          RegistroAdministracaoSerializer)
+
+
+class RegisterView(generics.CreateAPIView):
+    """
+    Endpoint para registrar novos usuários.
+    Apenas administradores podem criar novas contas.
+    """
+    queryset = User.objects.all()
+    serializer_class = RegisterSerializer
+    permission_classes = [IsAdminUser]  
 
 
 class PacienteViewSet(viewsets.ModelViewSet):
     """ViewSet para gerenciar pacientes"""
-    
+
+    permission_classes = [IsEnfermeiro]
+
     queryset = Paciente.objects.all()
     serializer_class = PacienteSerializer
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
@@ -24,7 +41,7 @@ class PacienteViewSet(viewsets.ModelViewSet):
     search_fields = ['nome_completo', 'cpf']
     ordering_fields = ['nome_completo', 'data_nascimento', 'data_admissao']
     ordering = ['nome_completo']
-    
+
     def get_serializer_class(self):
         """Retorna o serializer apropriado baseado na ação"""
         if self.action == 'retrieve':
@@ -32,14 +49,14 @@ class PacienteViewSet(viewsets.ModelViewSet):
         elif self.action == 'create':
             return PacienteCreateSerializer
         return PacienteSerializer
-    
+
     @action(detail=False, methods=['get'])
     def ativos(self, request):
         """Retorna apenas pacientes ativos"""
         pacientes_ativos = self.queryset.filter(ativo=True)
         serializer = self.get_serializer(pacientes_ativos, many=True)
         return Response(serializer.data)
-    
+
     @action(detail=True, methods=['post'])
     def desativar(self, request, pk=None):
         """Desativa um paciente"""
@@ -47,7 +64,7 @@ class PacienteViewSet(viewsets.ModelViewSet):
         paciente.ativo = False
         paciente.save()
         return Response({'status': 'Paciente desativado'})
-    
+
     @action(detail=True, methods=['post'])
     def ativar(self, request, pk=None):
         """Ativa um paciente"""
@@ -55,7 +72,7 @@ class PacienteViewSet(viewsets.ModelViewSet):
         paciente.ativo = True
         paciente.save()
         return Response({'status': 'Paciente ativado'})
-    
+
     @action(detail=True, methods=['get'])
     def prescricoes_ativas(self, request, pk=None):
         """Retorna prescrições ativas do paciente"""
@@ -68,6 +85,8 @@ class PacienteViewSet(viewsets.ModelViewSet):
 class MedicamentoViewSet(viewsets.ModelViewSet):
     """ViewSet para gerenciar medicamentos"""
     
+    permission_classes = [IsEnfermeiro]
+
     queryset = Medicamento.objects.all()
     serializer_class = MedicamentoSerializer
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
@@ -75,20 +94,20 @@ class MedicamentoViewSet(viewsets.ModelViewSet):
     search_fields = ['nome', 'principio_ativo', 'codigo_barras']
     ordering_fields = ['nome', 'principio_ativo', 'fabricante']
     ordering = ['nome']
-    
+
     def get_serializer_class(self):
         """Retorna o serializer apropriado baseado na ação"""
         if self.action == 'create':
             return MedicamentoCreateSerializer
         return MedicamentoSerializer
-    
+
     @action(detail=False, methods=['get'])
     def ativos(self, request):
         """Retorna apenas medicamentos ativos"""
         medicamentos_ativos = self.queryset.filter(ativo=True)
         serializer = self.get_serializer(medicamentos_ativos, many=True)
         return Response(serializer.data)
-    
+
     @action(detail=False, methods=['get'])
     def por_tipo(self, request):
         """Retorna medicamentos agrupados por tipo"""
@@ -103,7 +122,9 @@ class MedicamentoViewSet(viewsets.ModelViewSet):
 
 class PrescricaoMedicamentoViewSet(viewsets.ModelViewSet):
     """ViewSet para gerenciar prescrições de medicamentos"""
-    
+
+    permission_classes = [IsEnfermeiro]
+
     queryset = PrescricaoMedicamento.objects.all()
     serializer_class = PrescricaoMedicamentoSerializer
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
@@ -111,7 +132,7 @@ class PrescricaoMedicamentoViewSet(viewsets.ModelViewSet):
     search_fields = ['paciente__nome_completo', 'medicamento__nome', 'medico_responsavel']
     ordering_fields = ['data_inicio', 'created_at']
     ordering = ['-created_at']
-    
+
     def get_serializer_class(self):
         """Retorna o serializer apropriado baseado na ação"""
         if self.action == 'retrieve':
@@ -119,25 +140,25 @@ class PrescricaoMedicamentoViewSet(viewsets.ModelViewSet):
         elif self.action == 'create':
             return PrescricaoCreateSerializer
         return PrescricaoMedicamentoSerializer
-    
+
     @action(detail=False, methods=['get'])
     def ativas(self, request):
         """Retorna apenas prescrições ativas"""
         prescricoes_ativas = self.queryset.filter(status='ativo')
         serializer = self.get_serializer(prescricoes_ativas, many=True)
         return Response(serializer.data)
-    
+
     @action(detail=False, methods=['get'])
     def por_paciente(self, request):
         """Retorna prescrições agrupadas por paciente"""
         paciente_id = request.query_params.get('paciente_id')
         if not paciente_id:
             return Response({'error': 'paciente_id é obrigatório'}, status=400)
-        
+
         prescricoes = self.queryset.filter(paciente_id=paciente_id)
         serializer = self.get_serializer(prescricoes, many=True)
         return Response(serializer.data)
-    
+
     @action(detail=True, methods=['post'])
     def suspender(self, request, pk=None):
         """Suspende uma prescrição"""
@@ -145,7 +166,7 @@ class PrescricaoMedicamentoViewSet(viewsets.ModelViewSet):
         prescricao.status = 'suspenso'
         prescricao.save()
         return Response({'status': 'Prescrição suspensa'})
-    
+
     @action(detail=True, methods=['post'])
     def finalizar(self, request, pk=None):
         """Finaliza uma prescrição"""
@@ -154,7 +175,7 @@ class PrescricaoMedicamentoViewSet(viewsets.ModelViewSet):
         prescricao.data_fim = timezone.now().date()
         prescricao.save()
         return Response({'status': 'Prescrição finalizada'})
-    
+
     @action(detail=True, methods=['post'])
     def reativar(self, request, pk=None):
         """Reativa uma prescrição"""
@@ -162,7 +183,7 @@ class PrescricaoMedicamentoViewSet(viewsets.ModelViewSet):
         prescricao.status = 'ativo'
         prescricao.save()
         return Response({'status': 'Prescrição reativada'})
-    
+
     @action(detail=False, methods=['get'])
     def agenda_hoje(self, request):
         """Retorna agenda de medicamentos para hoje"""
@@ -173,7 +194,7 @@ class PrescricaoMedicamentoViewSet(viewsets.ModelViewSet):
         ).filter(
             models.Q(data_fim__isnull=True) | models.Q(data_fim__gte=hoje)
         )
-        
+
         agenda = []
         for prescricao in prescricoes_ativas:
             if prescricao.horarios_administracao:
@@ -184,17 +205,18 @@ class PrescricaoMedicamentoViewSet(viewsets.ModelViewSet):
                         'medicamento': prescricao.medicamento.nome,
                         'dosagem': prescricao.dosagem,
                         'horario': horario,
-                        'administrado': False  # Verificar se já foi administrado
+                        'administrado': False  
                     })
-        
-        # Ordenar por horário
+
         agenda.sort(key=lambda x: x['horario'])
         return Response(agenda)
 
 
 class RegistroAdministracaoViewSet(viewsets.ModelViewSet):
     """ViewSet para gerenciar registros de administração"""
-    
+
+    permission_classes = [IsEnfermeiro]
+
     queryset = RegistroAdministracao.objects.all()
     serializer_class = RegistroAdministracaoSerializer
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
@@ -202,7 +224,7 @@ class RegistroAdministracaoViewSet(viewsets.ModelViewSet):
     search_fields = ['prescricao__paciente__nome_completo', 'prescricao__medicamento__nome']
     ordering_fields = ['data_hora_prevista', 'data_hora_administracao']
     ordering = ['-data_hora_prevista']
-    
+
     @action(detail=False, methods=['get'])
     def hoje(self, request):
         """Retorna registros de hoje"""
@@ -212,7 +234,7 @@ class RegistroAdministracaoViewSet(viewsets.ModelViewSet):
         )
         serializer = self.get_serializer(registros_hoje, many=True)
         return Response(serializer.data)
-    
+
     @action(detail=False, methods=['get'])
     def pendentes(self, request):
         """Retorna registros pendentes de administração"""
@@ -224,35 +246,34 @@ class RegistroAdministracaoViewSet(viewsets.ModelViewSet):
         )
         serializer = self.get_serializer(registros_pendentes, many=True)
         return Response(serializer.data)
-    
+
     @action(detail=True, methods=['post'])
     def marcar_administrado(self, request, pk=None):
         """Marca um registro como administrado"""
         registro = self.get_object()
         registro.status = 'administrado'
         registro.data_hora_administracao = timezone.now()
-        registro.enfermeiro_responsavel = request.data.get('enfermeiro_responsavel', '')
+        registro.enfermeiro_responsavel = request.user.username
         registro.observacoes = request.data.get('observacoes', '')
         registro.save()
         return Response({'status': 'Medicamento marcado como administrado'})
-    
+
     @action(detail=True, methods=['post'])
     def marcar_nao_administrado(self, request, pk=None):
         """Marca um registro como não administrado"""
         registro = self.get_object()
         registro.status = 'nao_administrado'
-        registro.enfermeiro_responsavel = request.data.get('enfermeiro_responsavel', '')
+        registro.enfermeiro_responsavel = request.user.username
         registro.observacoes = request.data.get('observacoes', '')
         registro.save()
         return Response({'status': 'Medicamento marcado como não administrado'})
-    
+
     @action(detail=True, methods=['post'])
     def marcar_recusado(self, request, pk=None):
         """Marca um registro como recusado pelo paciente"""
         registro = self.get_object()
         registro.status = 'recusado'
-        registro.enfermeiro_responsavel = request.data.get('enfermeiro_responsavel', '')
+        registro.enfermeiro_responsavel = request.user.username
         registro.observacoes = request.data.get('observacoes', '')
         registro.save()
         return Response({'status': 'Medicamento marcado como recusado pelo paciente'})
-    
