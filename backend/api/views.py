@@ -4,7 +4,6 @@ from django.utils import timezone
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters, generics, viewsets
 from rest_framework.decorators import action
-from rest_framework.permissions import IsAdminUser
 from rest_framework.response import Response
 
 from .permissions import IsEnfermeiro
@@ -25,8 +24,7 @@ class RegisterView(generics.CreateAPIView):
     Apenas administradores podem criar novas contas.
     """
     queryset = User.objects.all()
-    serializer_class = RegisterSerializer
-    permission_classes = [IsAdminUser]  
+    serializer_class = RegisterSerializer 
 
 
 class PacienteViewSet(viewsets.ModelViewSet):
