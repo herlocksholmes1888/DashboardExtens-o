@@ -1,0 +1,298 @@
+.container {
+    position: relative;
+    width: 95%;
+    height: 95%;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    border: 5px solid #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .1),
+        0 0 10px rgba(0, 0, 0, .2),
+        0 0 15px rgba(0, 0, 0, .2);
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    overflow: hidden;
+}
+
+/* ZOOM */
+.container .left {
+    zoom: 90%;
+}
+
+.container .right {
+    zoom: 91%;
+}
+
+/* LEFT MENU */
+.container .left {
+    position: relative;
+    width: 250px;
+    background: rgba(255, 255, 255, 1);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    box-shadow: 35px 35px 68px 0px rgba(255, 255, 255, .5),
+        inset -8px -8px 16px 0px rgba(255, 255, 255, .6),
+        inset 0px 11px 28px 0px rgba(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 0;
+}
+
+.container .left header {
+    position: relative;
+    width: 100%;
+}
+
+.container .left header .logo {
+    position: relative;
+    margin-bottom: 15px;
+    padding-left: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #00000033;
+}
+
+.container .left header .logo h2 {
+    font-size: 1.4em;
+    font-weight: 600;
+    cursor: pointer;
+    color: #000000;
+}
+
+.container .left header .logo .close {
+    position: relative;
+    left: -20px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+    display: none;
+    color: #000000;
+}
+
+.container .left header nav {
+    position: relative;
+    padding: 20px 0 20px 20px;
+}
+
+.container .left header nav ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.container .left header nav ul li {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .left header nav ul li a {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-decoration: none;
+    padding-left: 20px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition: .3s ease;
+}
+
+.container .left header nav ul li a:hover,
+.container .left header nav ul li.ativo a {
+    background: #f1f3ff;
+}
+
+.container .left header nav ul li a::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background: #6577ff;
+    transition: .3s ease;
+}
+
+.container .left header nav ul li a:hover::before,
+.container .left header nav ul li.ativo a::before {
+    width: 4px;
+}
+
+.container .left header nav ul li a .material-symbols-outlined,
+.container .left header nav ul li a .title {
+    color: #999;
+    font-size: 1.1em;
+}
+
+.container .left header nav ul li a .material-symbols-outlined {
+    font-size: 1.7em;
+    margin-right: 10px;
+}
+
+.container .left header nav ul li a:hover .material-symbols-outlined,
+.container .left header nav ul li a:hover .title,
+.container .left header nav ul li.ativo a .material-symbols-outlined,
+.container .left header nav ul li.ativo a .title {
+    color: #6577ff;
+}
+
+.container .left .logout {
+    position: relative;
+    width: 100%;
+    padding: 20px 0 0 20px;
+}
+
+.container .left .logout ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.container .left .logout ul li {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .left .logout ul li a {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-decoration: none;
+    padding-left: 20px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition: .3s ease;
+}
+
+.container .left .logout ul li a:hover {
+    background: #b0b0b01f;
+}
+
+.container .left .logout ul li a::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background: #6577ff;
+    transition: .3s ease;
+}
+
+.container .left .logout ul li a:hover::before {
+    width: 4px;
+}
+
+.container .left .logout ul li a .material-symbols-outlined {
+    color: #6577ff;
+    font-size: 1.7em;
+    margin-right: 10px;
+}
+
+.container .left .logout ul li a .title {
+    color: #6577ff;
+    font-size: 1.1em;
+}
+
+.container .left .logout ul li a:hover .material-symbols-outlined,
+.container .left .logout ul li a:hover .title {
+    color: #6577ff;
+}
+
+.container .left .logout {
+    position: relative;
+    width: 100%;
+    padding: 20px 0 0 20px;
+}
+
+.container .left .logout ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.container .left .logout ul li {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .left .logout ul li a {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-decoration: none;
+    padding-left: 20px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition: .3s ease;
+}
+
+.container .left .logout ul li a:hover {
+    background: #f1f3ff;
+}
+
+.container .left .logout ul li a::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background: #6577ff;
+    transition: .3s ease;
+}
+
+.container .left .logout ul li a:hover::before {
+    width: 4px;
+}
+
+.container .left .logout ul li a .material-symbols-outlined {
+    color: #6577ff;
+    font-size: 1.7em;
+    margin-right: 10px;
+}
+
+.container .left .logout ul li a .title {
+    color: #6577ff;
+    font-size: 1.1em;
+}
+
+.container .left .logout ul li a:hover .material-symbols-outlined,
+.container .left .logout ul li a:hover .title {
+    color: #6577ff;
+}

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- Boxicons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
+
+    <!-- Arquivo Fonts e Cores -->
+    <link rel="stylesheet" href="../static/fonts/fontsCores.css">
+
+    <!-- Arquivos CSS -->
+    <link rel="stylesheet" href="../static/css/containerRightPacient.css">
+    <link rel="stylesheet" href="../static/css/containerLeftPacient.css">
+    <link rel="stylesheet" href="../static/css/main/mainPacient.css">
+    <link rel="stylesheet" href="../static/css/darktheme.css">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Task Dashboard</title>
+</head>
+
+<body class="bg-purple">
+
+    <!-- LOADER DE CARREGAMENTO -->
+    <div id="loader" class="loader hidden">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="container">
+        <!-- ============= Container Left ============= -->
+        <div class="left">
+            <header>
+                <div class="logo">
+                    <h2><i>Gustavo's Code</i></h2>
+                    <div class="close">
+                        <span class="material-symbols-outlined">
+                            close
+                        </span> <!-- Ícone de fechar -->
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <!-- 1° Item - Dashboard -->
+                        <li class="list">
+                            <a href="index.html">
+                                <span class="material-symbols-outlined">
+                                    dashboard
+                                </span>
+                                <span class="title">Dashboard</span>
+                            </a>
+                        </li>
+
+                        <!-- 2° Item - Pacientes -->
+                        <li class="list ativo">
+                            <a href="paciente.html">
+                                <span class="material-symbols-outlined full">
+                                    group
+                                </span>
+                                <span class="title">Paciente</span>
+                            </a>
+                        </li>
+
+                        <!-- 3° Item - Tarefas -->
+                        <li class="list">
+                            <a href="tarefas.html">
+                                <span class="material-symbols-outlined">
+                                    check_box
+                                </span>
+                                <span class="title">Tarefas</span>
+                            </a>
+                        </li>
+
+                        <!-- 4° Item - Tarefas -->
+                        <li class="list">
+                            <a href="desempenho.html">
+                                <span class="material-symbols-outlined">
+                                    monitoring
+                                </span>
+                                <span class="title">Desempenho</span>
+                            </a>
+                        </li>
+
+                        <!-- 5° Item - Mensagens -->
+                        <li class="list">
+                            <a href="suporte.html">
+                                <span class="material-symbols-outlined">
+                                    support_agent
+                                </span>
+                                <span class="title">Suporte</span>
+                            </a>
+                        </li>
+
+                        <!-- 6° Item - Configurações -->
+                        <li class="list">
+                            <a href="configurações.html">
+                                <span class="material-symbols-outlined">
+                                    settings
+                                </span>
+                                <span class="title">Configurações</span>
+                            </a>
+                        </li>
+                    </ul><!-- Fim da lista -->
+                </nav><!-- Fim do menu lateral -->
+            </header><!-- header -->
+
+            <!-- Logout-->
+            <div class="logout">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span class="material-symbols-outlined">
+                                logout
+                            </span> <!-- Ícone de logout -->
+                            <span class="title">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </div> <!-- Fim da div logout-->
+        </div><!--left-->
+        <!-- ============= Fim Container Left ============= -->
+
+        <!-- ====================== Right ====================== -->
+        <div class="right">
+            <!-- ============= Container Right ============= -->
+            <div class="top">
+                <div class="searchBx">
+                    <h2>Dashboard</h2>
+                    <div class="inputBx">
+                        <span class="material-symbols-outlined searchOpen">
+                            search
+                        </span>
+                        <input type="text" placeholder="Search...">
+                        <span class="material-symbols-outlined searchClose">
+                            close
+                        </span>
+                    </div><!-- Fim da div inputBx-->
+                </div><!-- Fim da div searchBx -->
+
+                <div class="user">
+                    <span class="material-symbols-outlined">
+                        notifications
+                    </span>
+
+                    <div class="userImg">
+                        <img src="../static/img/viktor-kirichenko-nEOSQiA_FHc-unsplash.jpg" alt="">
+                    </div><!-- Fim da div userImg-->
+                    <h2>Gustavo's Code<br><span>Administrator</span></h2>
+
+                    <div class="arrow">
+                        <span class="material-symbols-outlined">
+                            expand_more
+                        </span>
+                    </div><!-- Fim da div arrow-->
+
+                    <div class="toggle">
+                        <span class="material-symbols-outlined">
+                            menu
+                        </span>
+                        <span class="material-symbols-outlined">
+                            close
+                        </span>
+                    </div><!-- Fim da div toggle-->
+                </div><!-- Fim da div user-->
+            </div><!-- Fim da div top -->
+            <!-- ============= Fim Container Right ============= -->
+
+            <!-- ============= Project Main ============= -->
+            <main>
+                <div class="projectCard">
+                    <div class="projectBottom">
+                        <div class="projectInfo">
+                            <img src="../static/img/profile-2.jpeg" alt="João da Silva">
+                            <div class="details">
+                                <h2>Marvin McKinney</h2>
+                                <p>Idade: 65</p>
+                                <p>Cidade: Praia Grande - SP</p>
+                            </div>
+                        </div><br>
+                    </div>
+                    <div class="InfoBottom">
+                        <div class="InfoDetail">
+                            <div id="details">
+                                <strong>Idade</strong>
+                                <p>65</p>
+                            </div>
+
+                            <div id="details">
+                                <strong>Data de Nascimento</strong>
+                                <p>24/06/1960</p>
+                            </div>
+
+                            <div id="details">
+                                <strong>Email</strong>
+                                <p>marvin@gmail.com</p>
+                            </div>
+
+                            <div id="details">
+                                <strong>Telefone</strong>
+                                <p>+55 (13) 99194-2534</p>
+                            </div>
+
+                            <div id="details">
+                                <strong>Emergência</strong>
+                                <p>+55 (13) 78394-251</p>
+                            </div>
+
+                            <div id="details">
+                                <strong>Hospital</strong>
+                                <p>Santa Casa</p>
+                            </div>
+
+                            <div id="details">
+                                <strong>Responsável</strong>
+                                <p>João McKinn</p>
+                            </div>
+
+                            <div id="details">
+                                <strong>Médico</strong>
+                                <p>Ryan Souza Firmino</p>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+
+                    <div class="endereço">
+                        <div id="detailCep">
+                            <strong>Endereço:</strong>
+                            <p>Rua das Flores, 123 - Centro, Praia Grande - SP, 11700-000</p>
+                        </div>
+                    </div>
+
+                </div><!-- Fim da div ProjectCard -->
+            </main>
+        </div><!-- Fim da div right-->
+    </div><!-- Fim da div container -->
+
+
+    <script src="../static/js/menu.js"></script>
+    
+    <!-- carregar web -->
+    <script src="../static/js/carregarWeb.js"></script>
+    <script src="../static/js/configurações.js"></script>
+</body>
+
+</html>

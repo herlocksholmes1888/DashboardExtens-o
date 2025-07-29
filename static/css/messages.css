@@ -1,0 +1,294 @@
+.container .right main .medicaments {
+  position: relative;
+  width: 100%;
+  /* Ajustado para comportar aproximadamente 4 itens e mostrar barra de rolagem para o 5º */
+  max-height: 260px; /* Valor ajustado para a altura do card */
+  background: rgba(255, 255, 255, 1);
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  box-shadow:
+    35px 35px 68px 0px rgba(255, 255, 255, 0.5), inset -8px -8px 16px 0px rgba(255, 255, 255, 0.6), inset 0px
+    11px 28px 0px rgba(255, 255, 255);
+  display: flex;
+  flex-direction: column; /* Essencial para que o conteúdo interno possa rolar */
+  grid-row: 4 / 7;
+  padding: 10px 20px;
+  gap: 5px;
+}
+
+.container .right main .medicaments .medicamentsHead {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: space-between; /* Para alinhar o título e o botão '+' */
+  align-items: center;
+}
+
+.container .right main .medicaments .medicamentsHead h2 {
+  position: relative;
+  line-height: 18px;
+  color: #000000;
+  font-size: 1.2em;
+  cursor: default; /* Título não é clicável */
+}
+
+.container .right main .medicaments .medicamentsDots {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.container .right main .medicaments .medicamentsDots span {
+  color: #000000;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+/* Estilo Barra de Rolagem */
+.container .right main .medicaments .medicamentsContent {
+  flex-grow: 1; /* Permite que ocupe o espaço restante */
+  overflow-y: auto; /* Habilita a barra de rolagem vertical */
+  padding-right: 5px; /* Espaço para a barra de rolagem não sobrepor o conteúdo */
+}
+
+/* Barra de rolagem transparente para a área de medicamentos */
+.container .right main .medicaments .medicamentsContent::-webkit-scrollbar {
+  width: 8px;
+}
+
+.container .right main .medicaments .medicamentsContent::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.container .right main .medicaments .medicamentsContent::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 10px;
+  border: none;
+}
+
+.container .right main .medicaments .medicamentsContent::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+}
+/* Fim Estilo Barra de Rolagem */
+
+/* Mensagem padrão caso nenhum medicamento exista - similar ao noTasksMessage */
+.noMedicamentsMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%; /* Ocupa a altura total do content */
+  padding: 20px;
+  color: #696969;
+}
+
+.noMedicamentsMessage span {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.noMedicamentsMessage p {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.noMedicamentsMessage small {
+  font-size: 11.6px;
+}
+
+/* Estilos para os itens da lista de medicamentos dinamicamente adicionados */
+.container .right main .medicaments #medicamentList {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.container .right main .medicaments #medicamentList li {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Cor da borda para melhor visibilidade */
+}
+
+.container .right main .medicaments #medicamentList li:last-child {
+  border-bottom: none;
+}
+
+.container .right main .medicaments #medicamentList li .medicamentsUserImg {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.container .right main .medicaments #medicamentList li .medicamentsUserImg img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.container .right main .medicaments #medicamentList li .medicamentsUserInfo {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.container .right main .medicaments #medicamentList li .medicamentsUserInfo h2 {
+  color: #000000;
+  font-size: 1em;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.container .right main .medicaments #medicamentList li .medicamentsUserInfo .priority {
+  font-size: 0.8em;
+  color: #585858;
+}
+
+.container .right main .medicaments #medicamentList li .medicamentsUserCity {
+  text-align: right;
+  font-size: 1em;
+  color: #585858;
+  flex-shrink: 0;
+}
+
+.container .right main .medicaments #medicamentList li .medicament-actions {
+  display: flex;
+  gap: 5px;
+  margin-left: 10px;
+  flex-shrink: 0;
+}
+
+.container .right main .medicaments #medicamentList li .medicament-actions span {
+  font-size: 1.2em;
+  cursor: pointer;
+  color: #ff0000;
+  transition: color 0.3s ease;
+}
+
+/* Estilos Gerais do Modal */
+.modal {
+  display: none; /* Escondido por padrão */
+  position: fixed; /* Fica no lugar */
+  z-index: 1000; /* Fica no topo */
+  left: 0;
+  top: 0;
+  width: 100%; /* Largura total */
+  height: 100%; /* Altura total */
+  overflow: auto; /* Habilita rolagem se necessário */
+  background-color: rgba(0, 0, 0, 0.4); /* Fundo semi-transparente */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #22223be6; /* Fundo do modal branco */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.5em;
+  color: #ffffff; /* Cor do título do modal */
+}
+
+.closeBtn {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.closeBtn:hover,
+.closeBtn:focus {
+  color: rgb(255, 0, 0);
+  text-decoration: none;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-body label {
+  font-weight: 600;
+  color: #ffffff; /* Cor do texto dos labels */
+  margin-bottom: 5px;
+}
+
+.modal-body input[type="text"],
+.modal-body input[type="time"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  box-sizing: border-box;
+  color: #333; /* Cor do texto dentro dos inputs */
+  background-color: #f9f9f9; /* Fundo levemente cinza para inputs */
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+  margin-top: 15px;
+}
+
+.modal-footer button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.modal-footer button:first-child {
+  background-color: #ccc;
+  color: #333;
+}
+
+.modal-footer button:first-child:hover {
+  background-color: #bbb;
+}
+
+/* Garante que o modal seja centralizado quando exibido */
+.modal.show {
+  display: flex;
+}
+
+

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- Boxicons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
+
+    <!-- Arquivo Fonts e Cores -->
+    <link rel="stylesheet" href="assets/fonts/fontsCores.css">
+
+    <!-- Arquivos CSS -->
+    <link rel="stylesheet" href="../static//css/containerRightPacient.css">
+    <link rel="stylesheet" href="../static/css/containerLeftPacient.css">
+    <link rel="stylesheet" href="../static/css/main/mainDesempenho.css">
+    <link rel="stylesheet" href="../static/css/darktheme.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Task Dashboard</title>
+</head>
+
+<body class="bg-purple">
+
+    <!-- LOADER DE CARREGAMENTO -->
+    <div id="loader" class="loader hidden">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="container">
+        <!-- ============= Container Left ============= -->
+        <div class="left">
+            <header>
+                <div class="logo">
+                    <h2><i>Gustavo's Code</i></h2>
+                    <div class="close">
+                        <span class="material-symbols-outlined">
+                            close
+                        </span> <!-- Ícone de fechar -->
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <!-- 1° Item - Dashboard -->
+                        <li class="list">
+                            <a href="index.html">
+                                <span class="material-symbols-outlined">
+                                    dashboard
+                                </span>
+                                <span class="title">Dashboard</span>
+                            </a>
+                        </li>
+
+                        <!-- 2° Item - Pacientes -->
+                        <li class="list">
+                            <a href="paciente.html">
+                                <span class="material-symbols-outlined full">
+                                    group
+                                </span>
+                                <span class="title">Paciente</span>
+                            </a>
+                        </li>
+
+                        <!-- 3° Item - Tarefas -->
+                        <li class="list">
+                            <a href="tarefas.html">
+                                <span class="material-symbols-outlined">
+                                    check_box
+                                </span>
+                                <span class="title">Tarefas</span>
+                            </a>
+                        </li>
+
+                        <!-- 4° Item - Tarefas -->
+                        <li class="list ativo">
+                            <a href="desempenho.html">
+                                <span class="material-symbols-outlined">
+                                    monitoring
+                                </span>
+                                <span class="title">Desempenho</span>
+                            </a>
+                        </li>
+
+                        <!-- 5° Item - Mensagens -->
+                        <li class="list">
+                            <a href="suporte.html">
+                                <span class="material-symbols-outlined">
+                                    support_agent
+                                </span>
+                                <span class="title">Suporte</span>
+                            </a>
+                        </li>
+
+                        <!-- 6° Item - Configurações -->
+                        <li class="list">
+                            <a href="configurações.html">
+                                <span class="material-symbols-outlined">
+                                    settings
+                                </span>
+                                <span class="title">Configurações</span>
+                            </a>
+                        </li>
+                    </ul><!-- Fim da lista -->
+                </nav><!-- Fim do menu lateral -->
+            </header><!-- header -->
+
+            <!-- Logout-->
+            <div class="logout">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span class="material-symbols-outlined">
+                                logout
+                            </span> <!-- Ícone de logout -->
+                            <span class="title">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </div> <!-- Fim da div logout-->
+        </div><!--left-->
+        <!-- ============= Fim Container Left ============= -->
+
+        <!-- ====================== Right ====================== -->
+        <div class="right">
+            <!-- ============= Container Right ============= -->
+            <div class="top">
+                <div class="searchBx">
+                    <h2>Dashboard</h2>
+                    <div class="inputBx">
+                        <span class="material-symbols-outlined searchOpen">
+                            search
+                        </span>
+                        <input type="text" placeholder="Search...">
+                        <span class="material-symbols-outlined searchClose">
+                            close
+                        </span>
+                    </div><!-- Fim da div inputBx-->
+                </div><!-- Fim da div searchBx -->
+
+                <div class="user">
+                    <span class="material-symbols-outlined">
+                        notifications
+                    </span>
+
+                    <div class="userImg">
+                        <img src="../static/img/viktor-kirichenko-nEOSQiA_FHc-unsplash.jpg" alt="">
+                    </div><!-- Fim da div userImg-->
+                    <h2>Gustavo's Code<br><span>Administrator</span></h2>
+
+                    <div class="arrow">
+                        <span class="material-symbols-outlined">
+                            expand_more
+                        </span>
+                    </div><!-- Fim da div arrow-->
+
+                    <div class="toggle">
+                        <span class="material-symbols-outlined">
+                            menu
+                        </span>
+                        <span class="material-symbols-outlined">
+                            close
+                        </span>
+                    </div><!-- Fim da div toggle-->
+                </div><!-- Fim da div user-->
+            </div><!-- Fim da div top -->
+            <!-- ============= Fim Container Right ============= -->
+
+            <main>
+                <div class="projectCard">
+                    <h1 id="titleDesempenho">Desempenho</h1>
+                    <div class="charts-grid">
+                        <!-- CARD 1: Task Done -->
+                        <div class="chart-box chart-task-done">
+                            <h3>Task Done</h3>
+                            <div class="chart-task-row">
+                                <div class="donut-chart">
+                                    <canvas id="taskDoneChart"></canvas>
+                                    <div class="chart-label">20<br><small>Tasks left</small></div>
+                                </div>
+                                <div class="legend-right">
+                                    <span style="color:#ff00a2;">● 20 Tasks left</span><br>
+                                    <span style="color:#00e5d4;">● 30 Tasks Done</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CARD 2: Task Tracker -->
+                        <div class="chart-box chart-task-tracker">
+                            <h3>Task Tracker</h3>
+                            <canvas id="taskTrackerChart" height="200"></canvas>
+                        </div>
+
+                        <!-- CARD 3: Health Monitor -->
+                        <div class="chart-box chart-health-monitor">
+                            <h3>Health Monitor</h3>
+                            <div class="health-chart-wrapper">
+                                <canvas id="healthMonitorChart"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- CARD 4 -->
+                        <div class="chart-box chart-frequency-overview">
+                            <h3>Frequency Overview</h3>
+                            <div class="pie-legend-wrapper">
+                                <canvas id="frequencyOverviewChart"></canvas>
+                                <div class="legend-labels">
+                                    <div><span class="color-box" style="background:#ff00a2"></span>Tomar 2L de água
+                                    </div>
+                                    <div><span class="color-box" style="background:#00e5d4"></span>Caminhada (30 min)
+                                    </div>
+                                    <div><span class="color-box" style="background:#1d4ed8"></span>Tomar medicação no
+                                        horário</div>
+                                    <div><span class="color-box" style="background:#10b981"></span>Realizar exames
+                                        semanais</div>
+                                    <div><span class="color-box" style="background:#9966ff"></span>Evitar açúcar a tarde
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div><!-- Fim da div ProjectCard -->
+            </main>
+        </div><!-- Fim da div right-->
+    </div><!-- Fim da div container -->
+
+
+    <!-- ============= Javascript ============= -->
+
+    <script>
+        function atualizarTempo() {
+            const hora = document.getElementById('hora');
+            const temp = document.getElementById('temp');
+
+            // Hora
+            const agora = new Date();
+            hora.textContent = agora.toLocaleTimeString('pt-BR');
+
+            // Clima - Praia Grande
+            fetch('https://api.open-meteo.com/v1/forecast?latitude=-24.0058&longitude=-46.402&current_weather=true')
+                .then(res => res.json())
+                .then(data => {
+                    temp.textContent = `${data.current_weather.temperature}°C`;
+                })
+                .catch(() => {
+                    temp.textContent = "Erro";
+                });
+        }
+
+        atualizarTempo();
+        setInterval(atualizarTempo, 1000); // Atualiza hora a cada segundo
+    </script>
+
+    <script src="../static/js/menu.js"></script>
+    <script src="../static/js/calendario.js"></script>
+
+    <!-- CARD 1 DESEMPENHO -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        new Chart(document.getElementById('taskDoneChart'), {
+            type: 'doughnut',
+            data: {
+                datasets: [{
+                    data: [20, 30],
+                    backgroundColor: ['#ff00a2', '#00e5d4'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                cutout: '70%',
+                plugins: { legend: { display: false } }
+            }
+        });
+    </script>
+
+    <!-- CARD 2 DESEMPENHO -->
+    <script>
+        const ctxTracker = document.getElementById('taskTrackerChart').getContext('2d');
+        new Chart(ctxTracker, {
+            type: 'bar',
+            data: {
+                labels: ['T1', 'T2', 'T3', 'T4'],
+                datasets: [
+                    {
+                        label: 'Tasks Done',
+                        data: [10, 20, 30, 40],
+                        backgroundColor: '#00e5d4',
+                        borderRadius: 6,
+                    },
+                    {
+                        label: 'Tasks Left',
+                        data: [15, 25, 35, 45],
+                        backgroundColor: '#ff00a2',
+                        borderRadius: 6,
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { color: '#000' },
+                        grid: { color: '#333' }
+                    },
+                    x: {
+                        ticks: { color: '#000' },
+                        grid: { color: '#333' }
+                    }
+                }
+            }
+        });
+    </script>
+
+    <!-- CARD 3 DESEMPENHO -->
+    <script>
+        const ctxHealth = document.getElementById('healthMonitorChart').getContext('2d');
+
+        new Chart(ctxHealth, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
+                datasets: [{
+                    label: 'Health Index',
+                    data: [20, 50, 40, 60, 55, 100],
+                    borderColor: '#00e5d4',
+                    backgroundColor: 'rgba(0, 229, 212, 0.1)',
+                    fill: true,
+                    tension: 0.4,
+                    pointBackgroundColor: '#00e5d4',
+                    pointRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: {
+                    mode: 'nearest',      // interage com o ponto mais próximo do mouse
+                    intersect: true      // só ativa tooltip se estiver sobre o ponto
+                },
+                plugins: {
+                    tooltip: {
+                        enabled: true,   // ativa tooltip
+                        mode: 'nearest', // tooltip do ponto mais próximo
+                        intersect: true,
+                        callbacks: {
+                            label: function (context) {
+                                // Aqui formatamos o texto que aparece no tooltip
+                                return `Valor: ${context.parsed.y}`;
+                            }
+                        }
+                    },
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: { color: '#000' },
+                        grid: { color: 'rgba(255,255,255,0.1)' }
+                    },
+                    x: {
+                        ticks: { color: '#000' },
+                        grid: { color: 'rgba(255,255,255,0.1)' }
+                    }
+                }
+            }
+        });
+    </script>
+
+    <!-- CARD 4 DESEMPENHO-->
+    <!-- Plugin para mostrar labels no gráfico -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+    <script>
+        const ctxFreq = document.getElementById('frequencyOverviewChart').getContext('2d');
+
+        new Chart(ctxFreq, {
+            type: 'pie',
+            data: {
+                datasets: [{
+                    data: [25, 15, 30, 10, 20], // valores em porcentagem
+                    backgroundColor: [
+                        '#ff00a2',
+                        '#00e5d4',
+                        '#1d4ed8',
+                        '#10b981',
+                        '#9966ff'
+                    ],
+                    borderWidth: 1,
+                    borderColor: '#222'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#fff' // cor da legenda
+                        }
+                    },
+                    tooltip: {
+                        enabled: true,
+                        callbacks: {
+                            label: context => {
+                                const label = context.label || '';
+                                const value = context.parsed || 0;
+                                return `${label}: ${value}%`;
+                            }
+                        }
+                    },
+                    datalabels: {
+                        color: '#fff',
+                        formatter: (value, ctx) => {
+                            return value + '%';
+                        },
+                        font: {
+                            weight: 'bold',
+                            size: 14
+                        }
+                    }
+                }
+            },
+            plugins: [ChartDataLabels]
+        });
+
+    </script>
+
+    <!-- carregar web -->
+    <script src="../static/js/carregarWeb.js"></script>
+    <script src="../static/js/configurações.js"></script>
+</body>
+
+</html>

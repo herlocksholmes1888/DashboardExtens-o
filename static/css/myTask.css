@@ -1,0 +1,256 @@
+/* myTask */
+
+.container .right main .myTasks {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 35px 35px 68px 0px rgba(255, 255, 255, .5),
+        inset -8px -8px 16px 0px rgba(255, 255, 255, .6),
+        inset 0px 11px 28px 0px rgba(255, 255, 255);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    grid-row: 4 / 7;
+}
+
+.container .right main .myTasks .tasksHead {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.container .right main .myTasks .tasksHead h2 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    line-height: 18px;
+    color: #000000;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.container .right main .myTasks .tasksHead .tasksDots {
+    position: relative;
+    cursor: pointer;
+}
+
+.container .right main .myTasks .tasksHead .tasksDots span {
+    color: #000000;
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+.container .right main .myTasks .tasks {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.container .right main .myTasks .tasks ul {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.container .right main .myTasks .tasks ul li {
+    position: relative;
+    width: 100%;
+    height: calc(100% / 6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .right main .myTasks .tasks ul li::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background: rgba(0, 0, 0, .1);
+}
+
+.container .right main .myTasks .tasks ul li:last::before {
+    width: 0;
+}
+
+.container .right main .myTasks .tasks ul li .tasksIconName {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
+.container .right main .myTasks .tasks ul li .tasksIconName .tasksIcon {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.container .right main .myTasks .tasks ul li .tasksIconName .tasksIcon.done {
+    color: #ffffff;
+    background: #059669;
+}
+
+.container .right main .myTasks .tasks ul li .tasksIconName .tasksIcon.notDone {
+    background: #fff;
+    border: 3px solid #999;
+}
+
+.container .right main .myTasks .tasks ul li .tasksIconName .taskName {
+    position: relative;
+    color: #000000;
+    cursor: pointer;
+}
+
+.container .right main .myTasks .tasks ul li .tasksIconName .tasksName.tasksLine {
+    color: #000000;
+    cursor: not-allowed;
+}
+
+.container .right main .myTasks .tasks ul li .tasksIconName .tasksName.tasksLine::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background: #999;
+}
+
+.container .right main .myTasks .tasks ul li .tasksStar {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+.container .right main .myTasks .tasks ul li .tasksStar.full {
+    color: #f5c75f;
+}
+
+.container .right main .myTasks .tasks ul li .tasksStar.half {
+    color: #f5c75f;
+}
+
+.myTasks .tasks {
+  max-height: 200px; /* ajuste conforme seu layout */
+  overflow-y: auto;
+  padding-right: 5px; /* para evitar que a rolagem fique colada */
+}
+
+/* Estilo da barra de rolagem (opcional, mas deixa bonito) */
+.myTasks .tasks::-webkit-scrollbar {
+  width: 6px;
+}
+
+.myTasks .tasks::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.myTasks .tasks::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+
+.noTasksMessage {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #696969;
+    text-align: center;
+}
+
+.noTasksMessage .material-symbols-outlined {
+    font-size: 3rem;
+    color: #696969;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: #22223b;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #22223be6;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header .closeBtn {
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.modal-body {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-body input,
+.modal-body select {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background: #ffffff;
+  color: white;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.modal-footer button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.modal-footer .btnSalvar {
+  background: #e91e63;
+  color: white;
+}

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- Boxicons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
+
+    <!-- Arquivo Fonts e Cores -->
+    <link rel="stylesheet" href="assets/fonts/fontsCores.css">
+
+    <!-- Arquivos CSS -->
+    <link rel="stylesheet" href="../static/css/containerRight.css">
+    <link rel="stylesheet" href="../static/css/containerLeft.css">
+    <link rel="stylesheet" href="../static/css/myTask.css">
+    <link rel="stylesheet" href="../static/css/projectCard1.css">
+    <link rel="stylesheet" href="../static/css/timeLine.css">
+    <link rel="stylesheet" href="../static/css/calendar.css">
+    <link rel="stylesheet" href="../static/css/projectCard2.css">
+    <link rel="stylesheet" href="../static/css/messages.css">
+    <link rel="stylesheet" href="../static/css/main/main.css">
+    <link rel="stylesheet" href="../static/css/darktheme.css">
+
+
+    <meta name="viewport" content="width=device-width, initial-width.0">
+    <title>Responsive Task Dashboard</title>
+</head>
+
+<body class="bg-purple">
+
+    <!-- LOADER DE CARREGAMENTO -->
+    <div id="loader" class="loader hidden">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="container">
+        <!-- ============= Container Left ============= -->
+        <div class="left">
+            <header>
+                <div class="logo">
+                    <h2><i>Gustavo's Code</i></h2>
+                    <div class="close">
+                        <span class="material-symbols-outlined">
+                            close
+                        </span> <!-- Ícone de fechar -->
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <!-- 1° Item - Dashboard -->
+                        <li class="list ativo">
+                            <a href="index.html">
+                                <span class="material-symbols-outlined full">
+                                    dashboard
+                                </span>
+                                <span class="title">Dashboard</span>
+                            </a>
+                        </li>
+
+                        <!-- 2° Item - Pacientes -->
+                        <li class="list">
+                            <a href="paciente.html">
+                                <span class="material-symbols-outlined">
+                                    group
+                                </span>
+                                <span class="title">Paciente</span>
+                            </a>
+                        </li>
+
+                        <!-- 3° Item - Tarefas -->
+                        <li class="list">
+                            <a href="tarefas.html">
+                                <span class="material-symbols-outlined">
+                                    check_box
+                                </span>
+                                <span class="title">Tarefas</span>
+                            </a>
+                        </li>
+
+                        <!-- 4° Item - Tarefas -->
+                        <li class="list">
+                            <a href="desempenho.html">
+                                <span class="material-symbols-outlined">
+                                    monitoring
+                                </span>
+                                <span class="title">Desempenho</span>
+                            </a>
+                        </li>
+
+                        <!-- 5° Item - Mensagens -->
+                        <li class="list">
+                            <a href="suporte.html">
+                                <span class="material-symbols-outlined">
+                                    support_agent
+                                </span>
+                                <span class="title">Suporte</span>
+                            </a>
+                        </li>
+
+                        <!-- 6° Item - Configurações -->
+                        <li class="list">
+                            <a href="configurações.html">
+                                <span class="material-symbols-outlined">
+                                    settings
+                                </span>
+                                <span class="title">Configurações</span>
+                            </a>
+                        </li>
+                    </ul><!-- Fim da lista -->
+                </nav><!-- Fim do menu lateral -->
+            </header><!-- header -->
+
+            <!-- Logout-->
+            <div class="logout">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span class="material-symbols-outlined">
+                                logout
+                            </span> <!-- Ícone de logout -->
+                            <span class="title">Sair</span>
+                        </a>
+                    </li>
+                </ul>
+            </div> <!-- Fim da div logout-->
+        </div><!--left-->
+        <!-- ====================== Right ====================== -->
+        <div class="right">
+            <!-- ============= Container Right ============= -->
+            <div class="top">
+                <div class="searchBx">
+                    <h2>Dashboard</h2>
+                    <div class="inputBx">
+                        <span class="material-symbols-outlined searchOpen">
+                            search
+                        </span>
+                        <input type="text" placeholder="Search...">
+                        <span class="material-symbols-outlined searchClose">
+                            close
+                        </span>
+                    </div><!-- Fim da div inputBx-->
+                </div><!-- Fim da div searchBx -->
+
+                <div class="user">
+                    <span class="material-symbols-outlined">
+                        notifications
+                    </span>
+
+                    <div class="userImg">
+                        <img src="../static/img/viktor-kirichenko-nEOSQiA_FHc-unsplash.jpg" alt="">
+                    </div><!-- Fim da div userImg-->
+                    <h2>Gustavo's Code<br><span>Administrator</span></h2>
+
+                    <div class="arrow">
+                        <span class="material-symbols-outlined">
+                            expand_more
+                        </span>
+                    </div><!-- Fim da div arrow-->
+
+                    <div class="toggle">
+                        <span class="material-symbols-outlined">
+                            menu
+                        </span>
+                        <span class="material-symbols-outlined">
+                            close
+                        </span>
+                    </div><!-- Fim da div toggle-->
+                </div><!-- Fim da div user-->
+            </div><!-- Fim da div top -->
+            <!-- ============= Fim Container Right ============= -->
+
+
+            <!-- ============= Project Main ============= -->
+            <main>
+                <!-- ============= Project Card1 ============= -->
+                <div class="projectCard">
+                    <div class="projectTop">
+                        <h2>Paciente<br><span>Hospital Santa Casa</span></h2>
+                        <div class="projectsDots">
+                            <span class="material-symbols-outlined">
+                                more_horiz
+                            </span>
+                        </div><!-- Fim da div projectsDots-->
+                    </div><!-- Fim da div projectTop-->
+                    <div class="projectProgress">
+                        <div class="process">
+                            <h2>In Progress</h2>
+                        </div><!-- Fim da div process-->
+                        <div class="priority">
+                            <h2>High Priority</h2>
+                        </div><!-- Fim da div priority-->
+                    </div><!-- Fim da div projectProgress-->
+                    <div class="projectInfo">
+                        <img src="../static/img/profile-2.jpeg" alt="João da Silva">
+                        <div class="details">
+                            <h2>Marvin McKinney</h2>
+                            <p>Idade: 65</p>
+                            <p>Cidade: Praia Grande - SP</p>
+                        </div>
+                    </div>
+                    <div class="task">
+                        <h2>Task Done: <bold>20</bold> / 50</h2>
+                        <span class="line"></span>
+                    </div><!-- Fim da div task-->
+                </div><!-- Fim da div ProjectCard -->
+                <!-- ============= Fim Project Card1 ============= -->
+
+                <div class="myTasks">
+                    <div class="tasksHead">
+                        <h2>Painel de Tarefas</h2>
+                        <div class="tasksDots">
+                            <span id="addTaskBtn" title="Adicionar tarefa" class="material-symbols-outlined"
+                                style="cursor: pointer;">add</span>
+                        </div>
+                    </div>
+
+                    <div class="tasks" id="tasks">
+                        <!-- Mensagem padrão caso nenhuma tarefa exista -->
+                        <div class="noTasksMessage" id="noTasksMessage">
+                            <span class="material-symbols-outlined">task_alt</span>
+                            <p>Nenhuma tarefa cadastrada</p>
+                            <small>Clique no + para adicionar uma tarefa</small>
+                        </div>
+
+                        <!-- Lista de tarefas dinâmica -->
+                        <ul id="taskList" style="display: none;"></ul>
+                    </div>
+                </div>
+
+
+                <!-- ============= Fim Project Tasks ============= -->
+
+                <!-- ============= Project Calendar ============= -->
+                <div class="calendar">
+                    <div class="calendarHead">
+                        <h2>November 2025</h2>
+                        <div class="calendarIcon">
+                            <span class="material-symbols-outlined">
+                                chevron_left
+                            </span>
+                            <span class="material-symbols-outlined">
+                                chevron_right
+                            </span>
+                        </div><!-- Fim da div calendarIcon -->
+                    </div><!-- Fim da div calendarHead-->
+                    <div class="calendarData">
+                        <ul class="weeks">
+                            <li>Sun</li>
+                            <li>Mon</li>
+                            <li>Tue</li>
+                            <li>Wed</li>
+                            <li>Thu</li>
+                            <li>Fri</li>
+                            <li>Sat</li>
+                        </ul>
+                        <ul class="days">
+                            <li class="inactive">30</li>
+                            <li class="inactive">31</li>
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li class="active">4</li>
+                            <li>5</li>
+                            <li>6</li>
+                            <li>7</li>
+                            <li>8</li>
+                            <li>9</li>
+                            <li>10</li>
+                            <li>11</li>
+                            <li>12</li>
+                            <li>13</li>
+                            <li>14</li>
+                            <li>15</li>
+                            <li>16</li>
+                            <li>17</li>
+                            <li>18</li>
+                            <li>19</li>
+                            <li>20</li>
+                            <li>21</li>
+                            <li>22</li>
+                            <li>23</li>
+                            <li>24</li>
+                            <li>25</li>
+                            <li>26</li>
+                            <li>27</li>
+                            <li>28</li>
+                            <li>29</li>
+                            <li>30</li>
+                            <li class="inactive">1</li>
+                            <li class="inactive">2</li>
+                            <li class="inactive">3</li>
+                        </ul>
+                    </div><!-- Fim da div calendarData -->
+                </div><!-- Fim da div calendar -->
+                <!-- ============= Fim Project Calendar ============= -->
+
+                <!-- ============= Project Medicamentos ============= -->
+                <div class="medicaments">
+                    <div class="medicamentsHead">
+                        <h2>Lista dos medicamentos de hoje</h2>
+                        <div class="medicamentsDots">
+                            <span id="addMedicamentBtn" title="Adicionar medicamento" class="material-symbols-outlined"
+                                style="cursor: pointer;">add</span>
+                        </div>
+                    </div><!-- Fim da div medicamentsHead -->
+
+                    <div class="medicamentsContent" id="medicamentsContent">
+                        <!-- Mensagem padrão caso nenhum medicamento exista -->
+                        <div class="noMedicamentsMessage" id="noMedicamentsMessage">
+                            <span class="material-symbols-outlined">medication</span>
+                            <p>Nenhum medicamento cadastrado</p>
+                            <small>Clique no + para adicionar um medicamento</small>
+                        </div>
+                        <!-- Lista de medicamentos dinâmica -->
+                        <ul id="medicamentList" style="display: none;"></ul>
+                    </div>
+                </div><!-- .medicaments -->
+
+            </main>
+        </div><!-- Fim da div right-->
+    </div><!-- Fim da div container -->
+
+    <!-- Configurações dos CRUDS -->
+
+    <!-- 1° crud taskmodal-->
+    <div class="modal" id="taskModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Adicionar Tarefa</h2>
+                <span class="closeBtn" onclick="fecharModal()">×</span>
+            </div>
+            <div class="modal-body">
+                <label for="taskName">Nome da Tarefa:</label>
+                <input type="text" id="taskName">
+
+                <label for="taskPriority">Prioridade (Estrelas):</label>
+                <select id="taskPriority" style="color: gold;">
+                    <option value="1">★☆☆☆☆</option>
+                    <option value="2">★★☆☆☆</option>
+                    <option value="3">★★★☆☆</option>
+                    <option value="4">★★★★☆</option>
+                    <option value="5">★★★★★</option>
+                </select>
+
+                <label style="display: none;"><input type="checkbox" id="taskDone"> Tarefa concluída</label>
+            </div>
+            <div class="modal-footer">
+                <button onclick="fecharModal()">Cancelar</button>
+                <button onclick="salvarTarefa()" class="btnSalvar">Salvar</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 2° crud medicamentos-->
+    <div class="modal" id="medicamentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Adicionar Medicamento</h2>
+                <span class="closeBtn" onclick="closeMedicamentModal()">×</span>
+            </div>
+            <div class="modal-body">
+                <label for="medicamentName">Nome do Medicamento:</label>
+                <input type="text" id="medicamentName">
+
+                <label for="medicamentDosage">Dosagem (ex: 10 mg, 75 mcg):</label>
+                <input type="text" id="medicamentDosage">
+
+                <label for="medicamentTime">Horário:</label>
+                <input type="time" id="medicamentTime">
+            </div>
+            <div class="modal-footer">
+                <button onclick="closeMedicamentModal()">Cancelar</button>
+                <button onclick="saveMedicament()" class="btnSalvar">Salvar</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Javascript CRUD-->
+    <script src="../static/js/crud-task.js"></script>
+    <script src="../static/js/crud-medicamentos.js"></script>
+
+    <!-- ============= Javascript ============= -->
+    <script src="../static/js/carregarWeb.js"></script> <!-- carregar web -->
+    <script src="../static/js/time.js"></script>
+    <script src="../static/js/menu.js"></script>
+    <script src="../static/js/calendario.js"></script>
+    <script src="../static/js/configurações.js"></script>
+</body>
+
+</html>

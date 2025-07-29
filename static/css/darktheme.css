@@ -1,0 +1,478 @@
+/* Cores de fundo para temas */
+body.bg-purple {
+    background: linear-gradient(to right, #f4dbfb, #d8dbfe);
+}
+
+body.bg-blue {
+    background: linear-gradient(to right, #a0c4ff, #bcd0ff);
+    /* Azul pastel */
+}
+
+body.bg-green {
+    background: linear-gradient(to right, #b2f2bb, #d9f99d);
+    /* Verde menta suave */
+}
+
+body.bg-orange {
+    background: linear-gradient(to right, #ffd6a5, #ffb385);
+    /* Laranja pastel */
+}
+
+body.bg-pink {
+    background: linear-gradient(to right, #ffc9c9, #ffd6e8);
+    /* Rosa bebê */
+}
+
+body.bg-dark {
+    background: linear-gradient(#906dd1, #3a3d6e);
+}
+
+/* =============== Dark Mode Container Left All Html =============== */
+.container.card-dark {
+    background: #2525253b;
+    border: 5px solid #fff;
+    box-shadow: 0 0 5px rgba(252, 248, 248, 0.1),
+        0 0 10px rgba(0, 0, 0, .2),
+        0 0 15px rgba(0, 0, 0, .2);
+}
+
+.container.card-dark .left {
+    background: #22223be6;
+    box-shadow: 10px 10px 30px rgba(36, 36, 36, 0.5);
+}
+
+.container.card-dark .left header .logo {
+    border-bottom: 1px solid #ffffff33;
+}
+
+.container.card-dark .left header .logo h2 {
+    color: #ffffff;
+}
+
+.container.card-dark .left header .logo .close {
+    color: #ffffff;
+}
+
+.container.card-dark .left header nav ul li a:hover,
+.container.card-dark .left header nav ul li.ativo a {
+    background: #b0b0b01f;
+}
+
+.container.card-dark .left header nav ul li a::before {
+    background: #e91e62;
+}
+
+.container.card-dark .left header nav ul li a .material-symbols-outlined {
+    color: #999;
+}
+
+.container.card-dark .left header nav ul li a .title {
+    color: #999;
+}
+
+.container.card-dark .left header nav ul li a:hover .material-symbols-outlined,
+.container.card-dark .left header nav ul li a:hover .title,
+.container.card-dark .left header nav ul li.ativo a .material-symbols-outlined,
+.container.card-dark .left header nav ul li.ativo a .title {
+    color: #e91e62;
+}
+
+.container.card-dark .left .logout ul li a:hover {
+    background: #b0b0b01f;
+}
+
+.container.card-dark .left .logout ul li a::before {
+    background: #e91e62;
+}
+
+.container.card-dark .left .logout ul li a .material-symbols-outlined {
+    color: #e91e62;
+    font-size: 1.7em;
+    margin-right: 10px;
+}
+
+.container.card-dark .left .logout ul li a .title {
+    color: #e91e62;
+    font-size: 1.1em;
+}
+
+.container.card-dark .left .logout ul li a:hover .material-symbols-outlined,
+.container.card-dark .left .logout ul li a:hover .title {
+    color: #e91e62;
+}
+
+/* =============== Dark Mode Container Right =============== */
+.container.card-dark .right .top {
+    background: #22223be6;
+    box-shadow: 10px 10px 30px rgba(34, 34, 59, 0.5),
+        inset -8px -8px 16px 0px rgba(34, 34, 59, 0.6),
+        inset 0px 11px 28px 0px rgba(34, 34, 59, 0.8);
+}
+
+.container.card-dark .right .top .searchBx h2 {
+    color: #ffff;
+}
+
+.container.card-dark .right .top .searchBx .inputBx {
+    background: #f8f2fe;
+}
+
+.container.card-dark .right .top .searchBx .inputBx span {
+    color: #999;
+}
+
+.container.card-dark .right .top .searchBx .inputBx input {
+    color: #000;
+}
+
+.container.card-dark .right .top .user span {
+    color: #e91e62;
+}
+
+.container.card-dark .right .top .user #mode_icon {
+    color: #7c3aed;
+}
+
+.container.card-dark .right .top .user h2 {
+    color: #fff;
+}
+
+.container.card-dark .right .top .user h2 span {
+    color: #e91e62;
+}
+
+.container.card-dark .right .top .user .arrow {
+    border: 3px solid #fff;
+}
+
+.container.card-dark .right .top .user .arrow span {
+    color: #fff;
+}
+
+.container.card-dark .right .top .user .toggle {
+    border: 3px solid #fff;
+}
+
+.container.card-dark .right .top .user .toggle span {
+    color: #fff;
+}
+
+/* =============== Dark Mode Main =============== */
+.container.card-dark .right main .projectCard {
+    background: #22223be6;
+    box-shadow: 10px 10px 30px rgba(34, 34, 59, 0.5),
+        inset -8px -8px 16px 0px rgba(34, 34, 59, 0.6),
+        inset 0px 11px 28px 0px rgba(34, 34, 59, 0.8);
+}
+
+/* Settings Header */
+.container.card-dark .settings-header {
+    border-bottom: 1px solid #ffffff;
+}
+
+.container.card-dark .settings-title {
+    color: #ffffff;
+}
+
+.container.card-dark .save-button {
+    background-color: #e91e62;
+    color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.container.card-dark .section-title {
+    color: #ffffff;
+}
+
+.container.card-dark .section-description {
+    color: #f3f3f3;
+}
+
+.container.card-dark .theme-button {
+    border: 1px solid #d5d8dd;
+    color: #fefefe;
+}
+
+.container.card-dark .theme-button.active {
+    background-color: #e91e62;
+    color: white;
+    border-color: #e91e62;
+    box-shadow: 0 4px 6px -1px rgba(255, 255, 255, 0.3), 0 2px 4px -1px rgba(247, 247, 247, 0.1);
+}
+
+.container.card-dark .theme-button:hover:not(.active) {
+    background-color: #6577ff;
+}
+
+.container.card-dark .background-option {
+    background: rgba(255, 255, 255, 0.042);
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+}
+
+.container.card-dark .background-option input[type="radio"]:checked+.color-box+.color-label {
+    color: #e2e8f0;
+    font-weight: 600;
+}
+
+.container.card-dark .background-option input[type="radio"]:checked+.color-box {
+    outline: 2px solid #e2e8f0;
+    outline-offset: 2px;
+}
+
+.container.card-dark .active-tag {
+    background-color: #e91e62;
+    color: white;
+}
+
+.container.card-dark .right main .projectCard .projectTop h2 {
+    color: #fff;
+}
+
+.container.card-dark .right main .projectCard .projectTop h2 span {
+    color: #f1a8a8;
+}
+
+.container.card-dark .right main .projectCard .projectTop .projectsDots span {
+    color: #ffffff;
+}
+
+.container.card-dark .right main .projectCard .projectProgress .process {
+    background: #e91e6249;
+}
+
+.container.card-dark .right main .projectCard .projectProgress .process h2 {
+    color: #ff0055;
+}
+
+.container.card-dark .right main .projectCard .projectProgress .priority::before {
+    background: #ff0055;
+    box-shadow: 0 0 2px #ff0055,
+        0 0 5px #ff0055;
+}
+
+.container.card-dark .right main .projectCard .projectProgress .priority h2 {
+    color: #ff0055;
+}
+
+.container.card-dark .projectCard .details h2 {
+    color: #fff;
+}
+
+.container.card-dark .projectCard .details p {
+    color: #ccc;
+}
+
+.container.card-dark .right main .projectCard .task h2 {
+    color: rgb(255, 255, 255);
+}
+
+.container.card-dark .right main .projectCard .task h2 bold {
+    color: #dc2626;
+}
+
+.container.card-dark .right main .projectCard .task .line {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.container.card-dark .right main .projectCard .task .line::before {
+    background: #e0353b;
+}
+
+/* Calendario */
+.container.card-dark .right main .calendar {
+    background: rgba(34, 34, 59, 0.902);
+    box-shadow: 10px 10px 30px rgba(34, 34, 59, 0.5),
+        inset -8px -8px 16px 0px rgba(34, 34, 59, 0.6),
+        inset 0px 11px 28px 0px rgba(34, 34, 59, 0.8);
+}
+
+.container.card-dark .right main .calendar .calendarHead h2 {
+    color: #ffffff;
+}
+
+.container.card-dark .right main .calendar .calendarHead .calendarIcon .material-symbols-outlined {
+    color: #fff;
+}
+
+.container.card-dark .right main .calendar .calendarData .weeks {
+    color: #fff;
+}
+
+.container.card-dark .right main .calendar .calendarData .days li {
+    color: #ffffff;
+}
+
+.container.card-dark .right main .calendar .calendarData .days li.inactive {
+    color: #99999925;
+}
+
+.container.card-dark .right main .calendar .calendarData .days li.active {
+    background: #0000ff;
+    color: #fff;
+}
+
+.container.card-dark .right main .calendar .calendarData .days li:hover {
+    background: #727272;
+    color: #fff;
+    transition: 0s;
+}
+
+/* myTask */
+.container.card-dark .right main .myTasks {
+    background: #22223be6;
+    box-shadow: 10px 10px 30px rgba(34, 34, 59, 0.5),
+        inset -8px -8px 16px 0px rgba(34, 34, 59, 0.6),
+        inset 0px 11px 28px 0px rgba(34, 34, 59, 0.8);
+}
+
+.container.card-dark .right main .myTasks .tasksHead h2 {
+    color: #ffffff;
+}
+
+.container.card-dark .right main .myTasks .tasksHead .tasksDots span {
+    color: #ffffff;
+}
+
+.container.card-dark .right main .myTasks .tasks ul li::before {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.container.card-dark .right main .myTasks .tasks ul li .tasksIconName .tasksIcon.done {
+    color: #ffffff;
+    background: #059669;
+}
+
+.container.card-dark .right main .myTasks .tasks ul li .tasksIconName .tasksIcon.notDone {
+    background: #fff;
+    border: 3px solid #999;
+}
+
+.container.card-dark .right main .myTasks .tasks ul li .tasksIconName .taskName {
+    color: #fff;
+}
+
+.container.card-dark .right main .myTasks .tasks ul li .tasksIconName .tasksName.tasksLine {
+    color: #999;
+}
+
+/* medicaments */
+.container.card-dark .right main .medicaments {
+    background: #22223be6;
+    box-shadow: 10px 10px 30px rgba(34, 34, 59, 0.5),
+        inset -8px -8px 16px 0px rgba(34, 34, 59, 0.6),
+        inset 0px 11px 28px 0px rgba(34, 34, 59, 0.8);
+}
+
+.container.card-dark .right main .medicaments .medicamentsHead h2 {
+    color: #fff;
+}
+
+.container.card-dark .right main .medicaments .medicamentsDots span {
+    color: #ffffff;
+}
+
+.container.card-dark .right main .medicaments #medicamentList li .medicamentsUserInfo h2 {
+    color: #ffffff;
+    font-size: 1em;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.container.card-dark .right main .medicaments #medicamentList li .medicamentsUserInfo .priority {
+    font-size: 0.8em;
+    color: #f1a8a8;
+}
+
+.container.card-dark .right main .medicaments #medicamentList li .medicamentsUserCity {
+    color: #ffff;
+}
+
+/* HTML PACIENTE */
+.container.card-dark .right main .InfoDetail {
+    color: #ffffff;
+}
+
+.container.card-dark .right main .InfoDetail strong {
+    display: flex;
+    font-size: 1.4rem;
+}
+
+.container.card-dark .right main .InfoDetail #details p {
+    color: #ccc;
+}
+
+/* HTML TAREFAS */
+.container.card-dark .header-title h1 {
+    color: #ffffff;
+}
+
+
+/* HTML DESEMPENHO */
+.container.card-dark #titleDesempenho {
+    color: #ffffff;
+}
+
+.container.card-dark .chart-box {
+    border: 1px solid #ffffff33;
+    background: #22223be6;
+    box-shadow: 10px 10px 30px rgba(34, 34, 59, 0.5),
+        inset -8px -8px 16px 0px rgba(34, 34, 59, 0.6),
+        inset 0px 11px 28px 0px rgba(34, 34, 59, 0.8);
+    color: rgb(255, 255, 255);
+}
+
+.container.card-dark .chart-label {
+    color: #ffffff;
+}
+
+/* HTML SUPORTE */
+.container.card-dark .title-content h1 {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+.container.card-dark .titleSuporte h3 {
+  font-size: 14px;
+  color: #ccc;
+  font-weight: 400;
+}
+
+.container.card-dark .contact-card {
+  background: #22223be6;
+  border: 1px solid rgba(0, 0, 0, 0.158);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.container.card-dark .contact-info h3 {
+  color: #ffffff;
+}
+
+.container.card-dark .hospital-card {
+  background: #22223be6;
+  border: 1px solid rgba(0, 0, 0, 0.158);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.container.card-dark .card-header h3 {
+  color: #ffffff;
+}
+
+.container.card-dark .address-section p {
+  color: #ccc;
+}
+
+.container.card-dark .hours-header span {
+  color: #ffffff;
+}
+
+.container.card-dark .hours-list p {
+  color: #ccc;
+}
+
+.container.card-dark .social-card,
+.container.card-dark .help-card {
+  background: #22223be6;
+}

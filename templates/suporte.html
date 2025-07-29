@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- Boxicons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Arquivo Fonts e Cores -->
+    <link rel="stylesheet" href="../static/fonts/fontsCores.css">
+    <!-- Arquivos CSS -->
+    <link rel="stylesheet" href="../static/css/containerRightSuporte.css">
+    <link rel="stylesheet" href="../static/css/containerLeftSuporte.css">
+    <link rel="stylesheet" href="../static/css/main/mainSuporte.css">
+    <link rel="stylesheet" href="../static/css/suporte-content.css">
+    <link rel="stylesheet" href="../static/css/darktheme.css">
+
+    
+    <title>Responsive Task Dashboard</title>
+</head>
+<body class="bg-purple">
+    <!-- LOADER DE CARREGAMENTO -->
+    <div id="loader" class="loader hidden">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    
+    <div class="container">
+        <!-- ============= Container Left ============= -->
+        <div class="left">
+            <header>
+                <div class="logo">
+                    <h2><i>Gustavo's Code</i></h2>
+                    <div class="close">
+                        <span class="material-symbols-outlined">close</span>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <!-- 1° Item - Dashboard -->
+                        <li class="list">
+                            <a href="index.html">
+                                <span class="material-symbols-outlined">dashboard</span>
+                                <span class="title">Dashboard</span>
+                            </a>
+                        </li>
+                        <!-- 2° Item - Pacientes -->
+                        <li class="list">
+                            <a href="paciente.html">
+                                <span class="material-symbols-outlined full">group</span>
+                                <span class="title">Paciente</span>
+                            </a>
+                        </li>
+                        <!-- 3° Item - Tarefas -->
+                        <li class="list">
+                            <a href="tarefas.html">
+                                <span class="material-symbols-outlined">check_box</span>
+                                <span class="title">Tarefas</span>
+                            </a>
+                        </li>
+                        <!-- 4° Item - Desempenho -->
+                        <li class="list">
+                            <a href="desempenho.html">
+                                <span class="material-symbols-outlined">monitoring</span>
+                                <span class="title">Desempenho</span>
+                            </a>
+                        </li>
+                        <!-- 5° Item - Suporte (Ativo) -->
+                        <li class="list ativo">
+                            <a href="suporte.html">
+                                <span class="material-symbols-outlined">support_agent</span>
+                                <span class="title">Suporte</span>
+                            </a>
+                        </li>
+                        <!-- 6° Item - Configurações -->
+                        <li class="list">
+                            <a href="configurações.html">
+                                <span class="material-symbols-outlined">settings</span>
+                                <span class="title">Configurações</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <!-- Logout-->
+            <div class="logout">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span class="material-symbols-outlined">logout</span>
+                            <span class="title">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- ============= Fim Container Left ============= -->
+        
+        <!-- ====================== Right ====================== -->
+        <div class="right">
+            <div class="top">
+                <div class="searchBx">
+                    <h2>Dashboard</h2>
+                    <div class="inputBx">
+                        <span class="material-symbols-outlined searchOpen">search</span>
+                        <input type="text" placeholder="Search..." id="searchInput">
+                        <span class="material-symbols-outlined searchClose">close</span>
+                    </div>
+                </div>
+                <div class="user">
+                    <span class="material-symbols-outlined" id="notificationBtn">notifications</span>
+                    <div class="userImg">
+                        <img src="../static//viktor-kirichenko-nEOSQiA_FHc-unsplash.jpg" alt="">
+                    </div>
+                    <h2>Gustavo's Code<br><span>Administrator</span></h2>
+                    <div class="arrow">
+                        <span class="material-symbols-outlined">expand_more</span>
+                    </div>
+                    <div class="toggle">
+                        <span class="material-symbols-outlined">menu</span>
+                        <span class="material-symbols-outlined">close</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ============= Project Main ============= -->
+            <main>
+                <div class="projectCard">
+                    <!-- Header do Suporte -->
+                    <div class="titleSuporte">
+                        <div class="title-content">
+                            <h1 id="titleSuporte">Central de Suporte</h1>
+                            <h3>Estamos aqui para ajudar você</h3>
+                        </div>
+                        <div class="status-badge online">
+                            <div class="status-dot"></div>
+                            Online
+                        </div>
+                    </div>
+
+                    <!-- Conteúdo Principal do Suporte -->
+                    <div class="suporte-content">
+                        <!-- Seção de Contatos -->
+                        <div class="contact-section">
+                            <!-- Card Telefone -->
+                            <div class="contact-card">
+                                <div class="contact-icon phone-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-info">
+                                    <h3>Telefone de Suporte</h3>
+                                    <p class="contact-value phone-number">(13) 99189-5950</p>
+                                    <p class="contact-description">Atendimento 24h • Emergências médicas</p>
+                                </div>
+                                <button class="contact-btn primary" onclick="makeCall()">Ligar Agora</button>
+                            </div>
+
+                            <!-- Card Email -->
+                            <div class="contact-card">
+                                <div class="contact-icon email-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-info">
+                                    <h3>Email</h3>
+                                    <p class="contact-value email-address">gustavodiasdeoliveira72@gmail.com</p>
+                                    <p class="contact-description">Resposta em até 2 horas úteis</p>
+                                </div>
+                                <button class="contact-btn secondary" onclick="sendEmail()">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Enviar
+                                </button>
+                            </div>
+
+                            <!-- Card Chat -->
+                            <div class="contact-card">
+                                <div class="contact-icon chat-icon">
+                                    <i class="fas fa-comments"></i>
+                                </div>
+                                <div class="contact-info">
+                                    <h3>Chat Online</h3>
+                                    <p class="contact-value chat-status">Disponível agora</p>
+                                    <p class="contact-description">Seg-Sex: 8h às 18h • Sáb: 8h às 12h</p>
+                                </div>
+                                <button class="contact-btn chat" onclick="startChat()">Iniciar Chat</button>
+                            </div>
+                        </div>
+
+                        <!-- Seção Lateral -->
+                        <div class="sidebar-section">
+                            <!-- Card Hospital -->
+                            <div class="hospital-card">
+                                <div class="card-header">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <h3>Hospital Santa Casa</h3>
+                                </div>
+                                <div class="card-content">
+                                    <div class="address-section">
+                                        <p>Rua das Flores, 123<br>
+                                        Centro - São Paulo, SP<br>
+                                        CEP: 01234-567</p>
+                                    </div>
+                                    
+                                    <div class="separator"></div>
+                                    
+                                    <div class="hours-section">
+                                        <div class="hours-header">
+                                            <i class="fas fa-clock"></i>
+                                            <span>Funcionamento</span>
+                                        </div>
+                                        <div class="hours-list">
+                                            <p>Segunda a Sexta: 8h às 18h</p>
+                                            <p>Sábado: 8h às 12h</p>
+                                            <p>Domingo: Fechado</p>
+                                            <p class="emergency-hours">Emergências: 24h</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <button class="map-btn" onclick="openMap()">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        Ver no Mapa
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Seção Redes Sociais e Ajuda -->
+                        <div class="secondary-section">
+                            <!-- Card Redes Sociais -->
+                            <div class="social-card">
+                                <div class="card-header">
+                                    <i class="fas fa-users"></i>
+                                    <h3>Redes Sociais</h3>
+                                </div>
+                                <div class="card-content">
+                                    <div class="social-grid">
+                                        <button class="social-btn facebook" onclick="openSocial('facebook')">
+                                            <i class="fab fa-facebook"></i>
+                                            Facebook
+                                        </button>
+                                        <button class="social-btn instagram" onclick="openSocial('instagram')">
+                                            <i class="fab fa-instagram"></i>
+                                            Instagram
+                                        </button>
+                                        <button class="social-btn tiktok" onclick="openSocial('tiktok')">
+                                            <i class="fab fa-tiktok"></i>
+                                            Twitter
+                                        </button>
+                                        <button class="social-btn youtube" onclick="openSocial('youtube')">
+                                            <i class="fab fa-youtube"></i>
+                                            YouTube
+                                        </button>
+                                    </div>
+                                    <button class="website-btn" onclick="openWebsite()">
+                                        <i class="fas fa-globe"></i>
+                                        Visitar Website
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Card Recursos de Ajuda -->
+                            <div class="help-card">
+                                <div class="card-header">
+                                    <i class="fas fa-question-circle"></i>
+                                    <h3>Recursos de Ajuda</h3>
+                                </div>
+                                <div class="card-content">
+                                    <button class="help-btn" onclick="openResource('knowledge')">
+                                        <i class="fas fa-file-text"></i>
+                                        Base de Conhecimento
+                                    </button>
+                                    <button class="help-btn" onclick="openResource('faq')">
+                                        <i class="fas fa-question-circle"></i>
+                                        Perguntas Frequentes
+                                    </button>
+                                    <button class="help-btn" onclick="openResource('community')">
+                                        <i class="fas fa-users"></i>
+                                        Comunidade de Usuários
+                                    </button>
+                                    <button class="help-btn" onclick="openResource('docs')">
+                                        <i class="fas fa-file-alt"></i>
+                                        Documentação Técnica
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Chat Modal -->
+    <div id="chatModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Chat de Suporte</h3>
+                <button class="close-btn" onclick="closeChat()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message support">
+                        <div class="message-avatar">S</div>
+                        <div class="message-content">
+                            <p>Olá! Como posso ajudá-lo hoje?</p>
+                            <span class="message-time">Agora</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="messageInput" placeholder="Digite sua mensagem...">
+                    <button onclick="sendMessage()">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../static/js/menu.js"></script>
+    <script src="../static/js/carregarWeb.js"></script>
+    <script src="../static/js/suporte.js"></script>
+    <script src="../static/js/configurações.js"></script>
+</body>
+</html>

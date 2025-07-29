@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- Boxicons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
+
+    <!-- Arquivo Fonts e Cores -->
+    <link rel="stylesheet" href="../static/fonts/fontsCores.css">
+
+    <!-- Arquivos CSS -->
+    <link rel="stylesheet" href="../static/css/containerRightPacient.css">
+    <link rel="stylesheet" href="../static/css/containerLeftPacient.css">
+    <link rel="stylesheet" href="../static/css/main/mainConfigurações.css"> <!-- main da tarefas -->
+    <link rel="stylesheet" href="../static/css/darktheme.css">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Task Dashboard</title>
+</head>
+
+<body class="bg-purple">
+
+    <!-- LOADER DE CARREGAMENTO -->
+    <div id="loader" class="loader hidden">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="container">
+        <!-- ============= Container Left ============= -->
+        <div class="left">
+            <header>
+                <div class="logo">
+                    <h2><i>Gustavo's Code</i></h2>
+                    <div class="close">
+                        <span class="material-symbols-outlined">
+                            close
+                        </span> <!-- Ícone de fechar -->
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <!-- 1° Item - Dashboard -->
+                        <li class="list">
+                            <a href="index.html">
+                                <span class="material-symbols-outlined">
+                                    dashboard
+                                </span>
+                                <span class="title">Dashboard</span>
+                            </a>
+                        </li>
+
+                        <!-- 2° Item - Pacientes -->
+                        <li class="list ">
+                            <a href="paciente.html">
+                                <span class="material-symbols-outlined full">
+                                    group
+                                </span>
+                                <span class="title">Paciente</span>
+                            </a>
+                        </li>
+
+                        <!-- 3° Item - Tarefas -->
+                        <li class="list ">
+                            <a href="tarefas.html">
+                                <span class="material-symbols-outlined">
+                                    check_box
+                                </span>
+                                <span class="title">Tarefas</span>
+                            </a>
+                        </li>
+
+                        <!-- 4° Item - Tarefas -->
+                        <li class="list">
+                            <a href="desempenho.html">
+                                <span class="material-symbols-outlined">
+                                    monitoring
+                                </span>
+                                <span class="title">Desempenho</span>
+                            </a>
+                        </li>
+
+                        <!-- 5° Item - Mensagens -->
+                        <li class="list ">
+                            <a href="suporte.html">
+                                <span class="material-symbols-outlined">
+                                    support_agent
+                                </span>
+                                <span class="title">Suporte</span>
+                            </a>
+                        </li>
+
+                        <!-- 6° Item - Configurações -->
+                        <li class="list ativo">
+                            <a href="configurações.html">
+                                <span class="material-symbols-outlined">
+                                    settings
+                                </span>
+                                <span class="title">Configurações</span>
+                            </a>
+                        </li>
+                    </ul><!-- Fim da lista -->
+                </nav><!-- Fim do menu lateral -->
+            </header><!-- header -->
+
+            <!-- Logout-->
+            <div class="logout">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span class="material-symbols-outlined">
+                                logout
+                            </span> <!-- Ícone de logout -->
+                            <span class="title">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </div> <!-- Fim da div logout-->
+        </div><!--left-->
+        <!-- ============= Fim Container Left ============= -->
+
+        <!-- ====================== Right ====================== -->
+        <div class="right">
+            <!-- ============= Container Right ============= -->
+            <div class="top">
+                <div class="searchBx">
+                    <h2>Dashboard</h2>
+                    <div class="inputBx">
+                        <span class="material-symbols-outlined searchOpen">
+                            search
+                        </span>
+                        <input type="text" placeholder="Search...">
+                        <span class="material-symbols-outlined searchClose">
+                            close
+                        </span>
+                    </div><!-- Fim da div inputBx-->
+                </div><!-- Fim da div searchBx -->
+
+                <div class="user">
+                    <span class="material-symbols-outlined">
+                        notifications
+                    </span>
+
+                    <div class="userImg">
+                        <img src="../static/img/viktor-kirichenko-nEOSQiA_FHc-unsplash.jpg" alt="">
+                    </div><!-- Fim da div userImg-->
+                    <h2>Gustavo's Code<br><span>Administrator</span></h2>
+
+                    <div class="arrow">
+                        <span class="material-symbols-outlined">
+                            expand_more
+                        </span>
+                    </div><!-- Fim da div arrow-->
+
+                    <div class="toggle">
+                        <span class="material-symbols-outlined">
+                            menu
+                        </span>
+                        <span class="material-symbols-outlined">
+                            close
+                        </span>
+                    </div><!-- Fim da div toggle-->
+                </div><!-- Fim da div user-->
+            </div><!-- Fim da div top -->
+            <!-- ============= Fim Container Right ============= -->
+
+            <!-- ============= Project Main ============= -->
+            <main>
+                <div class="projectCard">
+                    <!-- Settings Card Content -->
+                    <div class="settings-header">
+                        <h1 class="settings-title">Configurações</h1>
+                        <button class="save-button">
+                            <span class="material-symbols-outlined">save</span>
+                            Salvar as alterações
+                        </button>
+                    </div>
+
+                    <div class="settings-section">
+                        <h2 class="section-title">Modo do Tema</h2>
+                        <div class="theme-mode-options">
+                            <button class="theme-button active" data-theme="light">
+                                <span class="material-symbols-outlined theme-icon">light_mode</span>
+                                Claro
+                            </button>
+                            <button class="theme-button" data-theme="dark">
+                                <span class="material-symbols-outlined theme-icon">dark_mode</span>
+                                Escuro
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h2 class="section-title">Tema de Fundo</h2>
+                        <div class="background-theme-options">
+                            <label class="background-option">
+                                <input type="radio" name="background-theme" value="purple" checked>
+                                <div class="color-box purple"></div>
+                                <span class="color-label">Principal (Atual)</span>
+                                <span class="active-tag">Ativo</span>
+                            </label>
+                            <label class="background-option">
+                                <input type="radio" name="background-theme" value="blue">
+                                <div class="color-box blue"></div>
+                                <span class="color-label">Azul</span>
+                                <span class="active-tag">Ativo</span>
+                            </label>
+                            <label class="background-option">
+                                <input type="radio" name="background-theme" value="green">
+                                <div class="color-box green"></div>
+                                <span class="color-label">Verde</span>
+                                <span class="active-tag">Ativo</span>
+                            </label>
+                            <label class="background-option">
+                                <input type="radio" name="background-theme" value="orange">
+                                <div class="color-box orange"></div>
+                                <span class="color-label">Laranja</span>
+                                <span class="active-tag">Ativo</span>
+                            </label>
+                            <label class="background-option">
+                                <input type="radio" name="background-theme" value="pink">
+                                <div class="color-box pink"></div>
+                                <span class="color-label">Rosa</span>
+                                <span class="active-tag">Ativo</span>
+                            </label>
+                            <label class="background-option">
+                                <input type="radio" name="background-theme" value="dark">
+                                <div class="color-box dark"></div>
+                                <span class="color-label">Roxo</span>
+                                <span class="active-tag">Ativo</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h2 class="section-title">Idioma</h2>
+                        <select id="language-select" class="language-select">
+                            <option value="pt-br">Português (Brasil)</option>
+                            <option value="en-us">English (US)</option>
+                            <option value="es-es">Español (España)</option>
+                        </select>
+                    </div>
+                </div>
+            </main>
+        </div><!-- Fim da div right-->
+    </div><!-- Fim da div container -->
+
+    <script src="../static/js/menu.js"></script>
+    <script src="../static/js/carregarWeb.js"></script>
+    <script src="../static/assets/js/configurações.js"></script>
+
+</body>
+
+</html>

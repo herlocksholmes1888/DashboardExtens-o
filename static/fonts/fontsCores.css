@@ -1,0 +1,81 @@
+/* Criar variáveis */
+:root {
+    --color-light-50: #f8faf6;
+    
+    --color-dark-50: #797984;
+    --color-dark-100: #312d37;
+    --color-dark-900: #000;
+    
+    --color-blue-50: #3b82f6;
+    --color-blue-100: #2563eb;
+    --color-blue-200: #1d4ed8;
+    --color-blue-prime: #6577ff;
+
+    --color-red-50: #ef4444;
+    --color-red-100: #dc2626;
+    --color-red-200: #b91c1c;
+    --color-red-prime: #e0353b;
+    --color-red-secund: #e91e63;
+
+    --color-red-darker-100: #6D0707;
+    --color-red-darker-200: #82090D;
+    
+    --color-green-light-50: #00ff08;
+    --color-green-light-100: #00b205;
+    --color-green-light-200: #007f04 ;
+    --color-green-secund: #0fd145;
+
+
+    --color-green-50: #10b981;
+    --color-green-100: #059669;
+    --color-green-200: #047857;
+    
+    --color-purple-50: #7c3aed;
+    --color-purple-100: #a855f7;
+    --color-purple-200: #bf46ef;
+    
+
+    --color-pink-50: #f4dbfb;
+    --color-pink-100: #d8dbfe;
+
+
+    --color-gradient: linear-gradient(90deg, var(--color-red-50), var(--color-purple-100), var(--color-purple-200));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Dubai;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(#f4dbfb, #d8dbfe);
+    font-size: 14px;
+}
+
+.full {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f4dbfb;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #f4dbfb;
+    border-radius: 10px;
+    border: 3px solid #fff;
+}

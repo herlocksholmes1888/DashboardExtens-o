@@ -1,0 +1,204 @@
+.container .right {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.container .right .top {
+    position: relative;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 35px 35px 68px 0px rgba(255, 255, 255, .5),
+        inset -8px -8px 16px 0px rgba(255, 255, 255, .6),
+        inset 0px 11px 28px 0px rgba(255, 255, 255);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+}
+
+.container .right .top .searchBx {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.container .right .top .searchBx h2 {
+    color: #000000;
+    font-size: 1.4em;
+    cursor: pointer;
+}
+
+.container .right .top .searchBx .inputBx {
+    position: relative;
+    width: 250px;
+    height: 50px;
+    background: #f8f2fe;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10px;
+    gap: 10px;
+    overflow: hidden;
+}
+
+.container .right .top .searchBx .inputBx span {
+    color: #999;
+    cursor: pointer;
+}
+
+.container .right .top .searchBx .inputBx input {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    outline: none;
+    border: none;
+    background: transparent;
+    margin-right: 10px;
+    font-size: 1.2em;
+    color: #000;
+}
+
+.container .right .top .searchBx .inputBx span.searchClose {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    display: none;
+}
+
+.container .right .top .user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto; /* Empurra o usuário para o lado direito */
+}
+
+.container .right .top .user span {
+    color: #f5c75f;
+    cursor: pointer;
+    transition: .5s ease;
+}
+
+.container .right .top .user #mode_icon {
+    color: #7700ff;
+    cursor: pointer;
+    transition: .5s ease;
+}
+
+.container .right .top .user span:hover {
+    transform: scale(1.15);
+}
+
+.container .right .top .user .userImg {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: .5s ease;
+}
+
+.container .right .top .user .userImg:hover {
+    transform: scale(1.15);
+}
+
+.container .right .top .user .userImg img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.container .right .top .user h2 {
+    font-size: 1.2em;
+    line-height: 18px;
+    white-space: nowrap;
+    cursor: pointer;
+    color: #000000;
+}
+
+.container .right .top .user h2 span {
+    color: #6577ff;
+    font-size: 0.8em;
+}
+
+.container .right .top .user .arrow {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border: 3px solid #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .right .top .user .arrow span {
+    font-size: 2em;
+    color: #999;
+    transition: .3s ease;
+    margin-top: 5px;
+}
+
+.container .right .top .user .arrow:hover span {
+    transform: scale(1.2);
+}
+
+.container .right .top .user .toggle {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border: 3px solid #999;
+    border-radius: 10px;
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container .right .top .user .toggle span {
+    color: #000000;
+    font-size: 1.5em;
+    font-weight: 900;
+    transition: .3s ease, opacity 0s, visibility 0s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.container .right .top .user .toggle:hover span {
+    transform: scale(1.1);
+}
+
+.container .right .top .user .toggle span:last-child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.container .right .top .user .toggle.active span:first-child {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.container .right .top .user .toggle.active span:last-child {
+    opacity: 1;
+    visibility: visible;
+}
