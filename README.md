@@ -1,5 +1,5 @@
 # Farmavision - Painel de Gerenciamento de Saúde - Projeto de Extensão da UNIP
-## Curso: Ciência da Computação - UNIP
+## Curso: Ciência da Computação 
 
 **Farmavision** é um sistema de gerenciamento voltado para enfermeiros que trabalham em casas de repouso. Ele visa facilitar a gestão do estoque de remédios e a administração destes mesmos remédios em pacientes. Consiste em um painel interativo com a aparência de um dashboard moderno, cujos dados são suplementados por uma API RESTful construída com Django Rest Framework. 
 
